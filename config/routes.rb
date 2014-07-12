@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+  post 'sessions' => 'sessions#create'
+  
   resources :comments
 
   get 'users/new'
