@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :comments
+
   get 'users/new'
   post 'users' => 'users#create'
 
