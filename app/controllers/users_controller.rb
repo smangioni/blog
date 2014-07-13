@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     #@user.password_hash = Digest::MD5.digest(user_params[:password_hash])
 
     @user.save
-    redirect_to root_path  
+    redirect_to root_path
   end
   
   private

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'sessions/new'
+  get 'logout' => 'sessions#delete'
   post 'sessions' => 'sessions#create'
   
   resources :comments
