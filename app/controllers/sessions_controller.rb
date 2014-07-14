@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.where(email: user_params[:email], password_hash: user_params[:password_hash]).first
+    @user = User.where(email: user_params[:email], password_hash: Digest::MD5.digest(user_params[:password_hash])).first
     session[:user_id] = @user.id #Save the user_id on the session
     redirect_to root_path
   end

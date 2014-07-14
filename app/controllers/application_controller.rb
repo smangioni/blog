@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def authenticate
     if (session[:user_id] == nil)
       # Improve this
-      if (params[:controller] != "sessions")
+      if (params[:controller] != "sessions" && params[:controller] != "users")
         redirect_to sessions_new_path
       end
     end
