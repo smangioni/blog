@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  before_action :logued_user, only: [:new]
+
   def new
   end
   

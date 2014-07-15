@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
+
+  before_action :logued_user, only: [:new]
+
   def new
   end
-  
+
   def create
     @user = User.new(user_params)
     @user.save
