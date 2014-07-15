@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     if (session[:user_id] == nil)
       # Improve this
       if (params[:controller] != "sessions" && params[:controller] != "users")
-        redirect_to sessions_new_path
+        redirect_to signin_path
       end
     end
   end

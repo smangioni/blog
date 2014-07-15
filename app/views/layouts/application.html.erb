@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <header>
+    <% if session[:user_id] %>
+      <p> <%= link_to 'Logout', logout_path %> </p>
+    <% end %>
+  </header>
 <%= yield %>
-
+  <footer>Footer</footer>
 </body>
 </html>
