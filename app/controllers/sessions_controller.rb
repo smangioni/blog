@@ -3,13 +3,14 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.where(email: user_params[:email], password_hash: Digest::MD5.digest(user_params[:password_hash])).first
-    session[:user_id] = @user.id #Save the user_id on the session
+    session[:user_id] = User.authenticate(user_params[:email], user_params[:password_hash])
+
     redirect_to root_path
   end
   
   def delete
     session[:user_id] = nil #Remove the user_id on the session
+
     redirect_to root_path
   end
   

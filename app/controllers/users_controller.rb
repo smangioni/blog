@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    @user.password_hash = Digest::MD5.digest(user_params[:password_hash]).force_encoding("utf-8")
-
     @user.save
+    session[:user_id] = @user.id #get up the session
+
     redirect_to root_path
   end
   
