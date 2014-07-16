@@ -10,5 +10,12 @@
   <%= @post.body.titleize %>
 </p>
 
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+
+<h2>Add a comment to post:</h2>
+<%= render "comments/form" %>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', root_path %>
